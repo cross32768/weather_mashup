@@ -105,6 +105,7 @@ def index():
 @app.route('/post', methods=['POST', 'GET'])
 def post():
     if request.method == 'POST':
+        title = "Weather information cite"
         message = "都市名を入力してエンターを押してください"
         cityname = request.form.getlist('city')[0]
         delta_list, forecast = weatherhacksapi(cityname)
@@ -112,7 +113,7 @@ def post():
         result_twitter = twitterapi(cityname)
         for i in range(len(result_twitter)):
             result_twitter[i][0] = timetostring(result_twitter[i][0])
-        return render_template('index.html', 
+        return render_template('index.html', title=title,
                                cityname=cityname, message=message, 
                                delta_string=delta_string, forecast=forecast,
                                result_twitter=result_twitter)
