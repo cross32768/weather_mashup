@@ -4,6 +4,8 @@
     □URL:https://ancient-castle-70500.herokuapp.com/
     
     □今の所、都市名を入力欄に入れるとweatherhacks(情報があれば）とtwitterから天気情報を収集して1つのページに表示します
+   
+  　□twitterは5時間以内のその都市の天気に関するツイートを新しい順に20件まで拾ってきます
     
     □現在の時刻からの時間差も表示しますが、ここはバグがあるかもしれません
 
@@ -29,7 +31,7 @@
 #### ○Todo
     □他の天気情報apiも組み合わせる（openweathermap, darkskyが候補）
     
-    □twitterapiの検索クエリを改善する
+    □twitterapiの検索クエリを改善する（今かなり雑な検索をしている）
     
     □CSSを改造して見栄えを改善する
     
