@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          <form method="post" action="/post" name="city" class="form-inline">
+            <h3>都市名を入力してエンターを押してください</h3>
+            <p>都市名：<input type="text" name="city" class="btn btn-default"></p>
+          </form>
+
+        <p class="lead">
+              {% if cityname %}
+              <div style="color: #fff; background:
+              #3cb371; padding: 20px; border: 2px dashed
+              rgba(255,255,255,0.5); -moz-border-radius: 
+              6px; -webkit-border-radius: 6px; border-radius: 
+              6px; -moz-box-shadow: 0 0 0 5px #3cb371, 0 2px 3px 5px
+               rgba(0,0,0,0.5); -webkit-box-shadow: 0 0 0 5px
+              #3cb371, 0 2px 3px 5px rgba(0,0,0,0.5); box-shadow: 0 0 0 5px
+              #3cb371, 0 2px 3px 5px rgba(0,0,0,0.5); font-size: 150%;">
+              ☆Weatherhacks情報:<br>
+              <p style="padding-left:1em">
+              {% if forecast %}
+               {{cityname}}の天気は{{forecast}}でした！<br>
+              （{{delta_string}}時点)
+              {% else %}
+               {{cityname}}の天気情報はありませんでした...
+              {% endif %}
+              </p>
+              </div>
+
+              <br>
+              {% for tweet in result_twitter %}
+              <div style="color: #fff; background:
+              #00BFFF; padding: 20px; border: 2px dashed
+              rgba(255,255,255,0.5); -moz-border-radius: 
+              6px; -webkit-border-radius: 6px; border-radius: 
+              6px; -moz-box-shadow: 0 0 0 5px #00BFFF, 0 2px 3px 5px
+               rgba(0,0,0,0.5); -webkit-box-shadow: 0 0 0 5px
+              #00BFFF, 0 2px 3px 5px rgba(0,0,0,0.5); box-shadow: 0 0 0 5px
+              #00BFFF, 0 2px 3px 5px rgba(0,0,0,0.5); font-size: 120%;">
+              ☆Twitter情報:<br>
+                <p style="text-indent:1em">
+                  □ツイート：<br>
+                  <p style="padding-left:3em">
+                  {{tweet[1]}} <br>
+                  （{{tweet[0]}})
+                  </p>
+                </p>
+              </div>
+              {% endfor %}
+
+              {% endif %}
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

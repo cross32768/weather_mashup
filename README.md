@@ -1,0 +1,2 @@
+天気予報api(weatherhacks)とtwitterapiを組み合わせてお天気情報取得マッシュアップサービスを作るよ
+
